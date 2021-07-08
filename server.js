@@ -56,7 +56,7 @@ server.get("/message/:id", (req,res)=>{
         res.status(200).json(message)
     })
 });
-server.delete("/message",(req,res)=>{
+server.delete("/message/:id",(req,res)=>{
     res.setHeader("Content-Type","application/json")
     console.log(`-> Delete function is running`)
     Message.findByIdAndDelete(req.params.id,(err,result)=>{
