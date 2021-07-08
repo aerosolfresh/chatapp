@@ -10,6 +10,10 @@ var app = new Vue ({
             {
                 author:"User",
                 body:"this is a msg"
+            },
+            {
+                author:"User2",
+                body:"this is also a msg"
             }
         ]
     },
@@ -26,9 +30,13 @@ var app = new Vue ({
         //clear the inputs
         this.new_author="";
         this.new_body="";
+        },
+        deleteMsg: function(index){
+            this.msgs.splice(index,1)
         }
     },
     computed:{
 
     }
 });
+// <button v-on:click="deleteThread(index)">Delete</button>
