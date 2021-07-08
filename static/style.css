@@ -10,6 +10,7 @@ body{
 }
 .create-message{
     text-align: center;
+    background-color: lightblue;
 }
 .message-list{
     list-style: none;
