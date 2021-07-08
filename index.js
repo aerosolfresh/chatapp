@@ -3,7 +3,7 @@ const persist = require("./persist.js");
 
 const portNumber =process.argv[10]|| process.env.PORT||8080;
 
-persist.connect(()=>{
+persist(()=>{
     console.log(`- Trying to access Database`)
     //start server
     server.listen(portNumber,()=>{
