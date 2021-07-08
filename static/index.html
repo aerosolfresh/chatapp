@@ -23,15 +23,16 @@
     </div>
 
     <div class="message-box">
-        <li v-for="msg in msgs">
-        
+        <li v-for="(msg,index) in msgs">
+       
             <p> {{ msg.author }}</p>
             <p> {{ msg.body }}</p>
             
             <!-- Delete button here -->
-            //<button v-on:click="deleteThread(index)">Delete</button>
+            //<button v-on:click="deleteMsg(index)">Delete</button>
         </li>
     </div>
+    
 
 </div>
 
