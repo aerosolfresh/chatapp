@@ -21,6 +21,14 @@
         <button>Delete</button>
     </div>
 
+    <li v-for="msg in msgs">
+       
+        <p> {{ msg.author }}</p>
+        <p> {{ msg.body }}</p>
+        
+        <!-- Delete button here -->
+        //<button v-on:click="deleteThread(index)">Delete</button>
+    </li>
 
 </div>
 
