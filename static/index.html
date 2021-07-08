@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Chat App</title>
 </head>
 <div id="app" class="wrapper">
@@ -15,20 +16,22 @@
 
     <button>Submit</button>
 
-    <div class="message">
+    <div>
         <textarea></textarea>
         <br>
         <button>Delete</button>
     </div>
 
-    <li v-for="msg in msgs">
-       
-        <p> {{ msg.author }}</p>
-        <p> {{ msg.body }}</p>
+    <div class="message-box">
+        <li v-for="msg in msgs">
         
-        <!-- Delete button here -->
-        //<button v-on:click="deleteThread(index)">Delete</button>
-    </li>
+            <p> {{ msg.author }}</p>
+            <p> {{ msg.body }}</p>
+            
+            <!-- Delete button here -->
+            //<button v-on:click="deleteThread(index)">Delete</button>
+        </li>
+    </div>
 
 </div>
 
