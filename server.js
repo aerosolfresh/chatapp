@@ -55,4 +55,12 @@ server.delete("/message",(req,res)=>{
     })
 })
 
+
+server.get("/message/:id", (req,res)=>{
+    res.setHeader("ContentType", "application/json");
+    console.log(`We are getting the thread with id ${req.params.id}`);
+    Message.findById(req.params.id, (err, message)=>{
+        
+    })
+});
 module.exports = server;
