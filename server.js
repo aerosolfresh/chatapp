@@ -8,3 +8,5 @@ server.use(express.json());
 server.use(express.static('static'));
 
 server.get("/message")
+
+module.exports = server;
