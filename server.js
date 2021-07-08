@@ -7,6 +7,15 @@ server.use(cors);
 server.use(express.json());
 server.use(express.static('static'));
 
+app.use((req,res,next)=>{
+    console.log(
+    "- Time: ",Date.now(),
+    " - Method: ",req.method,
+    " - Path: ",req.originalUrl,
+    " - Body: ",req.body);
+    next();
+});
+
 server.get("/message", (req, res)=>{
     res.setHeader("ContentType", "application/json");
     console.log("We are getting the thread");
@@ -24,16 +33,6 @@ server.get("/message", (req, res)=>{
         res.status(200).json(message);
     })
 })
-app.use((req,res,next)=>{
-    console.log(
-    "- Time: ",Date.now(),
-    " - Method: ",req.method,
-    " - Path: ",req.originalUrl,
-    " - Body: ",req.body);
-    next();
-});
-
-server.get("/message")
 
 server.delete("/message",(req,res)=>{
     res.setHeader("Content-Type","application/json")
