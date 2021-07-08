@@ -7,7 +7,7 @@ server.use(cors);
 server.use(express.json());
 server.use(express.static('static'));
 
-app.use((req,res,next)=>{
+server.use((req,res,next)=>{
     console.log(
     "- Time: ",Date.now(),
     " - Method: ",req.method,
@@ -17,6 +17,7 @@ app.use((req,res,next)=>{
 });
 
 server.get("/message", (req, res)=>{
+    console.log("Yomama")
     res.setHeader("ContentType", "application/json");
     console.log("We are getting the thread");
     Message.find({}, (err, message)=>{
@@ -56,6 +57,7 @@ server.get("/message/:id", (req,res)=>{
         res.status(200).json(message)
     })
 });
+server.post("/message", (req,res)=>{})
 server.delete("/message",(req,res)=>{
     res.setHeader("Content-Type","application/json")
     console.log(`-> Delete function is running`)
