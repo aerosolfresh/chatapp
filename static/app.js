@@ -24,7 +24,7 @@ var app = new Vue ({
     },
     methods:{
         getMsgs:function(){
-            fetch(this.url+"/chat").then(function(response){
+            fetch(this.url+"/message").then(function(response){
                 response.json().then(function(data){
                     app.msgs=data;
                     console.log(data)
@@ -39,7 +39,7 @@ var app = new Vue ({
         }
 
         //push the new msg to the chat
-        /*fetch(this.url+"/chat",{
+        /*fetch(this.url+"/message",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"
@@ -62,6 +62,21 @@ var app = new Vue ({
         deleteMsg: function(index){
             this.msgs.splice(index,1)
         }
+        //delete msg function here
+        // to edit
+        /* deleteMsg: function(thread_id){
+            fetch(this.server_url+"/thread/"+thread_id,{
+                method:"DELETE",
+                headers:{
+                    "Content-Type":"application/json"
+                }
+            }).then(function(){
+                app.getThreads();
+            })
+            
+        },
+        */
+
     },
     computed:{
 
