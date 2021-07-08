@@ -7,7 +7,7 @@ server.use(cors);
 server.use(express.json());
 server.use(express.static('static'));
 
-app.use((req,res,next)=>{
+server.use((req,res,next)=>{
     console.log(
     "- Time: ",Date.now(),
     " - Method: ",req.method,
