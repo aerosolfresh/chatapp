@@ -60,7 +60,23 @@ server.get("/message/:id", (req,res)=>{
     res.setHeader("ContentType", "application/json");
     console.log(`We are getting the thread with id ${req.params.id}`);
     Message.findById(req.params.id, (err, message)=>{
-        
+        if (err){
+            res.status(500).send(JSON.stringify({
+                message: `Couldn't find a message with id ${req.params.id}`,
+                error:err
+                })
+            );
+            return;
+        }
+        else if (!message){
+            res.status(500).send(JSON.stringify({
+                message: `That message doesn't exist!`,
+                error: "Doesn't exist"
+                })
+            );
+            return;
+        }
+        res.status(200).json(message)
     })
 });
 module.exports = server;
