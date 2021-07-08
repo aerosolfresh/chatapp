@@ -3,29 +3,20 @@ const cors = require("cors");
 const {Message} = require("./model");
 const server = express();
 
-server.use(cors);
-server.use(express.json());
-server.use(express.static('static'));
-
-server.use((req,res,next)=>{
-    console.log(
-    "- Time: ",Date.now(),
-    " - Method: ",req.method,
-    " - Path: ",req.originalUrl,
-    " - Body: ",req.body);
-    next();
-});
+server.use(cors())
+server.use(express.json({}))
+server.use(express.static('static'))
+module.exports = server;
 
 server.get("/message", (req, res)=>{
-    console.log("Yomama")
-    res.setHeader("ContentType", "application/json");
+    res.setHeader("Content-Type", "application/json");
     console.log("We are getting the thread");
     Message.find({}, (err, message)=>{
         if (err){
             console.log("There was an issue getting the messages")
             res.status(500).send(
                 JSON.stringify({
-                    message:"Unable to grab our threads",
+                    a:"Unable to grab our threads",
                     error:err
                 })
             );
@@ -78,4 +69,3 @@ server.delete("/message/:id",(req,res)=>{
     })
 })
 
-module.exports = server;

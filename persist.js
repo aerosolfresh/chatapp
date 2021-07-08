@@ -1,6 +1,4 @@
 const mongoose = require("mongoose")
-
-
 function connect(callback) {
     let connectionString = `mongodb+srv://tilder_2021:myCoolPassword@cluster0.jpjzl.mongodb.net/chatApp?retryWrites=true&w=majority`
     // console log for server connection
