@@ -8,28 +8,31 @@
     <title>Chat App</title>
 </head>
 <div id="app" class="wrapper">
-    <h1>Chat App</h1>
+    <div class="create-message">
+        <h1>Chat App</h1>
+        <br>
 
-    <div class="input_form">
         <input type="text">
-    </div>
+        <br>
 
-    <button>Submit</button>
+        <button>Submit</button>
+        <br>
 
-    <div>
         <textarea></textarea>
         <br>
         <button>Delete</button>
+        <br>
+        <br>
     </div>
 
     <div class="message-box">
-        <li v-for="(msg,index) in msgs">
+        <li class="message-list" v-for="(msg,index) in msgs">
        
             <p> {{ msg.author }}</p>
             <p> {{ msg.body }}</p>
             
             <!-- Delete button here -->
-            //<button v-on:click="deleteMsg(index)">Delete</button>
+            <button v-on:click="deleteMsg(index)">Delete</button>
         </li>
     </div>
     

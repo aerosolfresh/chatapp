@@ -1,9 +1,16 @@
-.wrapper{
-    text-align: center;
+body{
+    margin: 0;
 }
-.input_form{
-    width: 80%;
+.wrapper{
+    margin: auto;
 }
 .message-box{
-    border: 1px solid black;
+    border: 1px solid #000000;
+    text-align: center;
+}
+.create-message{
+    text-align: center;
+}
+.message-list{
+    list-style: none;
 }
